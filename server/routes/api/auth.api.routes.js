@@ -38,7 +38,7 @@ router.post('/sign-in', async (req, res) => {
       const compare = await bcrypt.compare(password, user.password);
       if (user && compare) {
         req.session.user_id = user.id;
-        res.json({ message: 'success' });
+        res.json({ message: 'success', user });
         return;
       } else {
         res.json({ message: 'Неверный пароль или такого юзера нет' });
