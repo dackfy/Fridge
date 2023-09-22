@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { State } from './types/State';
-import * as api from '../../api';
+import * as api from '../users/api';
 import { AuthUser } from './types/types';
 
 const initialState: State = {
