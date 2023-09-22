@@ -1,0 +1,24 @@
+.reg {
+  &__container {
+    width: 1100px;
+  }
+  &__form {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 15px;
+    & label {
+      display: flex;
+      flex-direction: column;
+    }
+    & input {
+      width: 450px;
+      margin-bottom: 15px;
+    }
+    & button {
+      width: 100%;
+    }
+  }
+}
