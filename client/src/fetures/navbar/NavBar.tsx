@@ -4,7 +4,6 @@ import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../store';
 import { fetchLogOut } from '../../api';
-// import { BsFillCartFill } from 'react-icons/bs';
 
 function NavBar(): JSX.Element {
   const authUser = useSelector((store: RootState) => store.auth.authUser);
@@ -18,7 +17,6 @@ function NavBar(): JSX.Element {
       navigate('/');
     }
   };
-  // const authUser={name:'fylhtq'}
   return (
     <>
       <nav className="nav__container">
