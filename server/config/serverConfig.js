@@ -24,6 +24,7 @@ function serverConfig(app) {
   // Подключаем middleware, которое сообщает epxress, что в папке "ПапкаПроекта/public" будут
   // находится статические файлы, т.е.файлы доступные для скачивания из других приложений.
   app.use(express.static(path.join(__dirname, '../public')));
+  app.use(express.static(path.join(__dirname, '../../client/build'))); // Добавили для Docker'a
   // Подключаем middleware, которое позволяет читать содержимое body из HTTP-запросов
   // типа POST, PUT и DELETE.
   app.use(express.urlencoded({ extended: true }));
