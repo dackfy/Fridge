@@ -23,7 +23,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "ESLINT_NO_DEV_ERRORS=true react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -36,6 +36,7 @@
       "airbnb-typescript"
     ],
     "rules": {
+      "linebreak-style": 0,
       "jsx-a11y/interactive-supports-focus": 0,
       "jsx-a11y/control-has-associated-label": 0,
       "react/jsx-indent": 0,
