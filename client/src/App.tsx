@@ -13,6 +13,8 @@ import AuthorizationFormPage from './fetures/auth/AuthorizationFormPage';
 
 import { authcheckUser } from './fetures/auth/authSlice';
 import { usersLoad } from './fetures/users/usersSlice';
+import RecipeList from './fetures/recipes/RecipeList';
+import { recipesLoad } from './fetures/recipes/recipesSlice';
 // import BasketPage from '../features/products/BasketPage';
 
 function App(): JSX.Element {
@@ -21,6 +23,7 @@ function App(): JSX.Element {
   useEffect(() => {
     dispatch(usersLoad());
     dispatch(authcheckUser());
+    dispatch(recipesLoad());
   }, []);
 
   return (
@@ -30,6 +33,7 @@ function App(): JSX.Element {
           <Route path="/sign-up" element={<RegistrationFormPage />} />
           <Route path="/check-user" element={<AuthorizationFormPage />} />
           <Route path="*" element={<Error />} />
+          <Route path="/recipes" element={<RecipeList />} />
         </Route>
       </Routes>
     </BrowserRouter>

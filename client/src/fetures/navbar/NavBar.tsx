@@ -36,6 +36,14 @@ function NavBar(): JSX.Element {
               <a href="/busket"> </a>
               <li>Добро пожаловать, {authUser?.name}!</li>
               <li>
+                <NavLink
+                  className={({ isActive }) => (isActive ? 'active_link' : '')}
+                  to="/recipes"
+                >
+                  Рецепты
+                </NavLink>
+              </li>
+              <li>
                 <a
                   onClick={() => {
                     handleLogOut();
