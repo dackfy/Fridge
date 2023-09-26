@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
-const RecipeBot = () => {
+function RecipeBot() {
   const [ingredients, setIngredients] = useState([]);
   const [recipe, setRecipe] = useState('');
 
-  const handleIngredientChange = (e) => {
+  const handleIngredientChange = (e: any) => {
     setIngredients(e.target.value.split(' '));
   };
 
@@ -51,6 +51,6 @@ const RecipeBot = () => {
       {recipe && <div> {recipe}</div>}
     </div>
   );
-};
+}
 
 export default RecipeBot;
