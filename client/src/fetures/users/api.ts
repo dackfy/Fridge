@@ -1,6 +1,6 @@
-import { AuthUser } from './fetures/auth/types/types';
+import { AuthUser } from '../auth/types/types';
 
-import { User } from './fetures/users/types/types';
+import { User } from './types/types';
 
 export const fetchUsers = async (): Promise<User[]> => {
   const res = await fetch('/api/users');

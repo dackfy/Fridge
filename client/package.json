@@ -41,6 +41,7 @@
       "airbnb-typescript"
     ],
     "rules": {
+      "linebreak-style": 0,
       "jsx-a11y/interactive-supports-focus": 0,
       "jsx-a11y/control-has-associated-label": 0,
       "react/jsx-indent": 0,

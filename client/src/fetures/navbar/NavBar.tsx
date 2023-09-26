@@ -3,7 +3,8 @@ import './styles/style.scss';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../store';
-import { fetchLogOut } from '../../api';
+import { fetchLogOut } from '../users/api';
+// import { BsFillCartFill } from 'react-icons/bs';
 
 function NavBar(): JSX.Element {
   const authUser = useSelector((store: RootState) => store.auth.authUser);
@@ -42,6 +43,14 @@ function NavBar(): JSX.Element {
             <>
               <a href="/busket"> </a>
               <li>Добро пожаловать, {authUser?.name}!</li>
+              <li>
+                <NavLink
+                  className={({ isActive }) => (isActive ? 'active_link' : '')}
+                  to="/recipes"
+                >
+                  Рецепты
+                </NavLink>
+              </li>
               <li>
                 <a
                   onClick={() => {
