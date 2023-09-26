@@ -29,12 +29,18 @@ function NavBar(): JSX.Element {
               Меню
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              className={({ isActive }) => (isActive ? 'active_link' : '')}
+              to="/add"
+            >
+              ChatBot
+            </NavLink>
+          </li>
 
           {authUser ? (
             <>
-              <a href="/busket">
-                {' '}
-              </a>
+              <a href="/busket"> </a>
               <li>Добро пожаловать, {authUser?.name}!</li>
               <li>
                 <a
