@@ -44,6 +44,14 @@ function NavBar(): JSX.Element {
                 </NavLink>
               </li>
               <li>
+                <NavLink
+                  className={({ isActive }) => (isActive ? 'active_link' : '')}
+                  to="/favorites"
+                >
+                  Isbranoe
+                </NavLink>
+              </li>
+              <li>
                 <a
                   onClick={() => {
                     handleLogOut();

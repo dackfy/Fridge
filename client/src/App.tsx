@@ -15,6 +15,9 @@ import { authcheckUser } from './fetures/auth/authSlice';
 import { usersLoad } from './fetures/users/usersSlice';
 import RecipeList from './fetures/recipes/RecipeList';
 import { recipesLoad } from './fetures/recipes/recipesSlice';
+import RecipePage from './fetures/recipes/RecipePage';
+import { favoritesLoad } from './fetures/favorites/favoriteSlice';
+import FavoritesPage from './fetures/favorites/FavoritesPage';
 // import BasketPage from '../features/products/BasketPage';
 
 function App(): JSX.Element {
@@ -24,6 +27,7 @@ function App(): JSX.Element {
     dispatch(usersLoad());
     dispatch(authcheckUser());
     dispatch(recipesLoad());
+    dispatch(favoritesLoad());
   }, []);
 
   return (
@@ -32,8 +36,10 @@ function App(): JSX.Element {
         <Route path="/" element={<NavBar />}>
           <Route path="/sign-up" element={<RegistrationFormPage />} />
           <Route path="/check-user" element={<AuthorizationFormPage />} />
+          <Route path="/recipes/:id" element={<RecipePage />} />
           <Route path="*" element={<Error />} />
           <Route path="/recipes" element={<RecipeList />} />
+          <Route path="/favorites" element={<FavoritesPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

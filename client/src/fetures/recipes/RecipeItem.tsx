@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Recipe } from './types/Recipestypes';
 
 export default function RecipeItem({
@@ -9,8 +10,9 @@ export default function RecipeItem({
   return (
     <>
       <div>{recipe.title}</div>
-      <img src={recipe.img} alt="" />
-      <button type="button">добавить в избраное</button>
+      <Link to={`/recipes/${recipe.id}`}>
+        <img src={recipe.img} alt="картинка" style={{ width: '30%' }} />
+      </Link>
     </>
   );
 }
