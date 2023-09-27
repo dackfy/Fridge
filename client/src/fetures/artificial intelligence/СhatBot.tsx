@@ -31,14 +31,18 @@ function RecipeBot() {
         {
           headers: {
             Authorization:
-              'Bearer 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',
+              'Bearer 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',
             'Content-Type': 'application/json',
           },
         }
       );
 
       const generatedRecipe = response.data.choices[0].message.content;
-      setRecipe(generatedRecipe);
+      const formattedRecipe = generatedRecipe.replace(/\n/g, '<br />');
+      setRecipe(formattedRecipe);
+
+      // Очищаем инпут после успешного запроса
+      setIngredients([]);
     } catch (error) {
       console.error('Ошибка при запросе к API ChatGPT', error);
     } finally {
@@ -50,52 +54,19 @@ function RecipeBot() {
     <div>
       <h1>Генератор рецептов</h1>
       <p>Введите продукты, которые есть у вас:</p>
-      <input type="text" onChange={handleIngredientChange} />
+      <input
+        type="text"
+        value={ingredients.join(' ')}
+        onChange={handleIngredientChange}
+      />
       <button onClick={generateRecipe}>Сгенерировать рецепт</button>
-      {isLoading ? (
-        <div className="loader">
-          {/* Здесь ваш код пайлоудера */}
-          <div className="tall-stack">
-            <div className="butter falling-element"></div>
-            <div className="pancake falling-element"></div>
-            <div className="pancake falling-element"></div>
-            <div className="pancake falling-element"></div>
-            <div className="pancake falling-element"></div>
-            <div className="pancake falling-element"></div>
-            <div className="pancake falling-element"></div>
-            <div className="plate">
-              <div className="plate-bottom"></div>
-              <div className="shadow"></div>
-            </div>
-          </div>
+      {recipe && (
+        <div>
+          <h2>Рецепт:</h2>
+          <div dangerouslySetInnerHTML={{ __html: recipe }} />
         </div>
-      ) : recipe ? (
-        <div> {recipe}</div>
-      ) : null}
+      )}
     </div>
-    //
-    // <div>
-    //   <h1>Генератор рецептов</h1>
-    //   <p>Введите продукты, которые есть у вас:</p>
-    //   <input type="text" onChange={handleIngredientChange} />
-    //   <button onClick={generateRecipe}>Сгенерировать рецепт</button>
-    //   {recipe && <div> {recipe}</div>}
-    //   <div className="loader">
-    //     <div className="tall-stack">
-    //       <div className="butter falling-element"></div>
-    //       <div className="pancake falling-element"></div>
-    //       <div className="pancake falling-element"></div>
-    //       <div className="pancake falling-element"></div>
-    //       <div className="pancake falling-element"></div>
-    //       <div className="pancake falling-element"></div>
-    //       <div className="pancake falling-element"></div>
-    //       <div className="plate">
-    //         <div className="plate-bottom"></div>
-    //         <div className="shadow"></div>
-    //       </div>
-    //     </div>
-    //   </div>
-    // </div>
   );
 }
 
