@@ -3,7 +3,7 @@ import './styles/style.scss';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { RootState, useAppDispatch } from '../../store';
-import { fetchLogOut } from '../../api';
+import { fetchLogOut } from '../users/api';
 // import { BsFillCartFill } from 'react-icons/bs';
 
 function NavBar(): JSX.Element {
@@ -18,7 +18,6 @@ function NavBar(): JSX.Element {
       navigate('/');
     }
   };
-  // const authUser={name:'fylhtq'}
   return (
     <>
       <nav className="nav__container">
@@ -31,13 +30,35 @@ function NavBar(): JSX.Element {
               FridgeAI
             </NavLink>
           </li>
+          <li>
+            <NavLink
+              className={({ isActive }) => (isActive ? 'active_link' : '')}
+              to="/add"
+            >
+              ChatBot
+            </NavLink>
+          </li>
 
           {authUser ? (
             <>
-              <a href="/busket">
-                {' '}
-              </a>
+              <a href="/busket"> </a>
               <li>Добро пожаловать, {authUser?.name}!</li>
+              <li>
+                <NavLink
+                  className={({ isActive }) => (isActive ? 'active_link' : '')}
+                  to="/recipes"
+                >
+                  Рецепты
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className={({ isActive }) => (isActive ? 'active_link' : '')}
+                  to="/favorites"
+                >
+                  Isbranoe
+                </NavLink>
+              </li>
               <li>
                 <a
                   onClick={() => {

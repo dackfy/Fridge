@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './styles/styleReg.css';
 import { useNavigate } from 'react-router-dom';
-// import { fetchSignUp } from '../../App/api';
 import { useAppDispatch } from '../../store';
 import { signUp } from './authSlice';
 

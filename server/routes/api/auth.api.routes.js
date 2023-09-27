@@ -56,7 +56,9 @@ router.post('/sign-in', async (req, res) => {
 router.get('/check', async (req, res) => {
   try {
     if (req.session.user_id) {
-      const user = await User.findOne({ where: { id: req.session.user_id } });
+      const user = await User.findOne({
+        where: { id: req.session.user_id },
+      });
       res.json(user);
       return;
     }
