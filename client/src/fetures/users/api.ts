@@ -1,5 +1,4 @@
 import { AuthUser } from '../auth/types/types';
-
 import { User } from './types/types';
 
 export const fetchUsers = async (): Promise<User[]> => {
@@ -17,6 +16,7 @@ export const fetchSignUp = async (user: AuthUser): Promise<AuthUser> => {
   });
   return res.json();
 };
+
 export const fetchCheckUser = async (): Promise<AuthUser> => {
   const res = await fetch('/api/auth/check');
   return res.json();
