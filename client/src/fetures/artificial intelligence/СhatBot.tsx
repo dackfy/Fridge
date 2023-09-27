@@ -33,7 +33,7 @@ function RecipeBot() {
         {
           headers: {
             Authorization:
-              'Bearer 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',
+              'Bearer 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',
             'Content-Type': 'application/json',
           },
         }
@@ -53,16 +53,6 @@ function RecipeBot() {
   };
 
   return (
-
-    <div className="generateContainer">
-      <h1>Генератор рецептов</h1>
-      <p>Введите продукты, которые у вас есть:</p>
-      <input type="text" onChange={handleIngredientChange} />
-      <button onClick={generateRecipe} className="generate-recipe-btn">
-        Сгенерировать рецепт
-      </button>
-      {recipe && <div> {recipe}</div>}
-
     <div>
       {isLoading && (
         <div className="loader">
@@ -82,21 +72,28 @@ function RecipeBot() {
           </div>
         </div>
       )}
-      <h1>Генератор рецептов</h1>
-      <p>Введите продукты, которые есть у вас:</p>
-      <input
-        type="text"
-        value={ingredients.join(' ')}
-        onChange={handleIngredientChange}
-      />
-      <button onClick={generateRecipe}>Сгенерировать рецепт</button>
-      {recipe && (
-        <div>
-          <h2>Рецепт:</h2>
-          <div dangerouslySetInnerHTML={{ __html: recipe }} />
-        </div>
-      )}
-
+      <div className="generateContainer">
+        <h1>Генератор рецептов</h1>
+        <p>Введите продукты, которые есть у вас:</p>
+        <input
+          type="text"
+          value={ingredients.join(' ')}
+          onChange={handleIngredientChange}
+        />
+        <button
+          type="button"
+          onClick={generateRecipe}
+          className="generate-recipe-btn"
+        >
+          Сгенерировать рецепт
+        </button>
+        {recipe && (
+          <div>
+            <h2>Рецепт:</h2>
+            <div dangerouslySetInnerHTML={{ __html: recipe }} />
+          </div>
+        )}
+      </div>
     </div>
   );
 }
