@@ -2,9 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 
-import RecipeItem from './RecipeItem';
+// import RecipeItem from './RecipeItem';
 import './styles/style.scss';
-import { recipesSelect } from './recipesSlice';
+// import { recipesSelect } from './recipesSlice';
 
 
 import { RootState, useAppDispatch } from '../../store';
