@@ -1,6 +1,9 @@
-body {
-  background: #ffffff;
-  overflow: hidden;
+
+  body {
+    background-image: url('../../../public/translucent-image.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 .loader {
   position: absolute;
