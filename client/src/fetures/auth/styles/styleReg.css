@@ -21,7 +21,7 @@ body {
   font-family: Mulish;
 }
 
-.socials-row {
+/* .socials-row {
   display: flex;
   gap: 16px;
 }
@@ -52,7 +52,7 @@ body {
 .socials-row > a:hover {
   color: var(--primary);
   border: 1px solid var(--primary);
-}
+} */
 
 .divider {
   display: flex;
@@ -246,7 +246,7 @@ body {
 }
 
 .text-field label:focus-within {
-  color: var(--primary);
+  color: var(--orange);
 }
 
 .text-field {
@@ -264,11 +264,11 @@ body {
 }
 
 .text-field input:focus {
-  border: 1px solid var(--primary);
+  border: 1px solid var(--orange);
 }
 
 .text-field input:focus + svg {
-  stroke: var(--primary);
+  stroke: var(--orange);
 }
 
 .text-field label {
