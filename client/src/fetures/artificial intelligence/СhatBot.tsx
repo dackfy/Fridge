@@ -17,7 +17,6 @@ function RecipeBot() {
           model: 'gpt-3.5-turbo',
           messages: [
             { role: 'system', content: 'You are a helpful recipe bot.' },
-
             {
               role: 'user',
               content:
@@ -29,14 +28,18 @@ function RecipeBot() {
         {
           headers: {
             Authorization:
-              'Bearer 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',
+              'Bearer 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',
             'Content-Type': 'application/json',
           },
         }
       );
 
       const generatedRecipe = response.data.choices[0].message.content;
-      setRecipe(generatedRecipe);
+      const formattedRecipe = generatedRecipe.replace(/\n/g, '<br />');
+      setRecipe(formattedRecipe);
+
+      // Очищаем инпут после успешного запроса
+      setIngredients([]);
     } catch (error) {
       console.error('Ошибка при запросе к API ChatGPT', error);
     }
@@ -46,9 +49,18 @@ function RecipeBot() {
     <div>
       <h1>Генератор рецептов</h1>
       <p>Введите продукты, которые есть у вас:</p>
-      <input type="text" onChange={handleIngredientChange} />
+      <input
+        type="text"
+        value={ingredients.join(' ')}
+        onChange={handleIngredientChange}
+      />
       <button onClick={generateRecipe}>Сгенерировать рецепт</button>
-      {recipe && <div> {recipe}</div>}
+      {recipe && (
+        <div>
+          <h2>Рецепт:</h2>
+          <div dangerouslySetInnerHTML={{ __html: recipe }} />
+        </div>
+      )}
     </div>
   );
 }
