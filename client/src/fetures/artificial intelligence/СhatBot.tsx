@@ -1,15 +1,18 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './loading.css';
 
 function RecipeBot() {
   const [ingredients, setIngredients] = useState([]);
   const [recipe, setRecipe] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleIngredientChange = (e: any) => {
     setIngredients(e.target.value.split(' '));
   };
 
   const generateRecipe = async () => {
+    setIsLoading(true);
     try {
       const response = await axios.post(
         'https://api.openai.com/v1/chat/completions',
@@ -17,6 +20,7 @@ function RecipeBot() {
           model: 'gpt-3.5-turbo',
           messages: [
             { role: 'system', content: 'You are a helpful recipe bot.' },
+
             {
               role: 'user',
               content:
@@ -42,11 +46,31 @@ function RecipeBot() {
       setIngredients([]);
     } catch (error) {
       console.error('Ошибка при запросе к API ChatGPT', error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
   return (
     <div>
+      {isLoading && (
+        <div className="loader">
+          {/* Здесь ваш код пайлоудера */}
+          <div className="tall-stack">
+            <div className="butter falling-element"></div>
+            <div className="pancake falling-element"></div>
+            <div className="pancake falling-element"></div>
+            <div className="pancake falling-element"></div>
+            <div className="pancake falling-element"></div>
+            <div className="pancake falling-element"></div>
+            <div className="pancake falling-element"></div>
+            <div className="plate">
+              <div className="plate-bottom"></div>
+              <div className="shadow"></div>
+            </div>
+          </div>
+        </div>
+      )}
       <h1>Генератор рецептов</h1>
       <p>Введите продукты, которые есть у вас:</p>
       <input
