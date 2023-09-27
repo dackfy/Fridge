@@ -23,9 +23,9 @@ function RegistrationFormPage(): JSX.Element {
       <div className="form-side">
         <form onSubmit={handleSubmit} className="my-form">
           <div className="form-welcome-row">
-            <h1>Create your account &#x1F44F;</h1>
+            <h1>Регистрация &#x1F44F;</h1>
           </div>
-          <div className="socials-row">
+          {/* <div className="socials-row">
             <a href="#" title="Use Google">
               <img src="./assets/google.png" alt="Google" />
               Use Google
@@ -37,7 +37,7 @@ function RegistrationFormPage(): JSX.Element {
           <div className="divider">
             <div className="divider-line"></div> Or{' '}
             <div className="divider-line"></div>
-          </div>
+          </div> */}
           <div className="text-field">
             <label htmlFor="email">
               Email:
@@ -48,7 +48,7 @@ function RegistrationFormPage(): JSX.Element {
                 onChange={(e) => setEmail(e.target.value)}
                 name="email"
                 autoComplete="off"
-                placeholder="Your Email"
+                placeholder="Ваш Email"
                 required
               />
               <svg
@@ -70,7 +70,7 @@ function RegistrationFormPage(): JSX.Element {
           </div>
           <div className="text-field">
             <label htmlFor="email">
-              Name:
+              Имя:
               <input
                 type="text"
                 id="name"
@@ -78,7 +78,7 @@ function RegistrationFormPage(): JSX.Element {
                 onChange={(e) => setName(e.target.value)}
                 name="name"
                 autoComplete="off"
-                placeholder="Your name"
+                placeholder="Ваше имя"
                 required
               />
               <svg
@@ -120,14 +120,14 @@ function RegistrationFormPage(): JSX.Element {
           </div>
           <div className="text-field">
             <label htmlFor="password">
-              Password:
+              Пароль:
               <input
                 id="password"
                 type="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 name="password"
-                placeholder="Your Password"
+                placeholder="Ваш пароль"
                 title="Minimum 6 characters at 
                                     least 1 Alphabet and 1 Number"
                 pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
@@ -153,12 +153,12 @@ function RegistrationFormPage(): JSX.Element {
           </div>
           <div className="text-field">
             <label htmlFor="password">
-              Confirm password:
+              Подтвердите пароль:
               <input
                 id="confirm-password"
                 type="password"
                 name="confirm-password"
-                placeholder="Confirm password"
+                placeholder="Подтверждение пароля"
                 title="Minimum 6 characters at 
                                     least 1 Alphabet and 1 Number"
                 pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$"
@@ -183,14 +183,11 @@ function RegistrationFormPage(): JSX.Element {
             </label>
           </div>
           <button type="submit" className="my-form__button">
-            Login
+            Войти
           </button>
           <div className="my-form__actions">
-            <a href="#" title="Reset Password">
-              Reset Password
-            </a>
-            <a href="#" title="Create Account">
-              Already have an account?
+            <a href="/check-user" title="Create Account">
+              Уже есть аккаунт?
             </a>
           </div>
         </form>
