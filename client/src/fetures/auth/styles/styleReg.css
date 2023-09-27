@@ -6,6 +6,7 @@
   --white: #ffffff;
   --text: #323760;
   --info-side-background: #ad4ef5;
+  --orange: rgb(246, 141, 4);
 }
 
 body {
@@ -20,7 +21,7 @@ body {
   font-family: Mulish;
 }
 
-.socials-row {
+/* .socials-row {
   display: flex;
   gap: 16px;
 }
@@ -51,7 +52,7 @@ body {
 .socials-row > a:hover {
   color: var(--primary);
   border: 1px solid var(--primary);
-}
+} */
 
 .divider {
   display: flex;
@@ -153,7 +154,7 @@ body {
 }
 
 .my-form__button {
-  background-color: var(--primary);
+  background-color: var(--orange);
   color: white;
   white-space: nowrap;
   border: none;
@@ -178,8 +179,9 @@ body {
 
 .my-form__actions {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  /* flex-direction: row; */
+  justify-content: center;
+  align-items: center;
   color: var(--secondary);
   gap: 16px;
   margin-top: 8px;
@@ -244,7 +246,7 @@ body {
 }
 
 .text-field label:focus-within {
-  color: var(--primary);
+  color: var(--orange);
 }
 
 .text-field {
@@ -262,11 +264,11 @@ body {
 }
 
 .text-field input:focus {
-  border: 1px solid var(--primary);
+  border: 1px solid var(--orange);
 }
 
 .text-field input:focus + svg {
-  stroke: var(--primary);
+  stroke: var(--orange);
 }
 
 .text-field label {

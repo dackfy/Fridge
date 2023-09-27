@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './styles/style.css';
 import axios from 'axios';
 import './loading.css';
 
@@ -52,6 +53,16 @@ function RecipeBot() {
   };
 
   return (
+
+    <div className="generateContainer">
+      <h1>Генератор рецептов</h1>
+      <p>Введите продукты, которые у вас есть:</p>
+      <input type="text" onChange={handleIngredientChange} />
+      <button onClick={generateRecipe} className="generate-recipe-btn">
+        Сгенерировать рецепт
+      </button>
+      {recipe && <div> {recipe}</div>}
+
     <div>
       {isLoading && (
         <div className="loader">
@@ -85,6 +96,7 @@ function RecipeBot() {
           <div dangerouslySetInnerHTML={{ __html: recipe }} />
         </div>
       )}
+
     </div>
   );
 }
