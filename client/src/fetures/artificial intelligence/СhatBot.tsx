@@ -53,7 +53,7 @@ function RecipeBot() {
   };
 
   return (
-    <div>
+    <div className="generateContainer">
       {isLoading && (
         <div className="loader">
           {/* Здесь ваш код пайлоудера */}
@@ -72,7 +72,7 @@ function RecipeBot() {
           </div>
         </div>
       )}
-      <div className="generateContainer">
+      <div className="generateInputContainer">
         <h1>Генератор рецептов</h1>
         <p>Введите продукты, которые есть у вас:</p>
         <input
@@ -88,7 +88,7 @@ function RecipeBot() {
           Сгенерировать рецепт
         </button>
         {recipe && (
-          <div>
+          <div className="generatedRecipe">
             <h2>Рецепт:</h2>
             <div dangerouslySetInnerHTML={{ __html: recipe }} />
           </div>

@@ -1,14 +1,26 @@
 .generateContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 40px;
+}
+
+.generateInputContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-left: 10px;
-  padding-right: 10px;
+  gap: 16px;
+  max-width: 600px;
+  min-width: 300px;
+  width: 100%;
+  padding: 48px 12px;
+  height: fit-content;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 5px;
 }
 
-.generate-recipe-btn {
+.generateInputContainer .generate-recipe-btn {
   background-color: var(--orange);
   color: white;
   white-space: nowrap;
@@ -30,19 +42,4 @@
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
-}
-
-.my-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  position: relative;
-  gap: 16px;
-  max-width: 460px;
-  min-width: 300px;
-  width: 100%;
-  padding: 48px 32px;
-  height: fit-content;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  border-radius: 5px;
 }

@@ -1,6 +1,5 @@
 body {
   background: #ffffff;
-  overflow: hidden;
 }
 .loader {
   position: absolute;
@@ -45,7 +44,7 @@ body {
   z-index: 0;
   width: 180px;
   height: 10px;
-  background: rgba(0, 0, 0, .2);
+  background: rgba(0, 0, 0, 0.2);
   border-radius: 80%;
   z-index: 0;
 }
@@ -55,14 +54,14 @@ body {
   background: #eadd4d;
   margin: auto;
   border-radius: 2px;
-  box-shadow: inset 0 -2px 0 2px rgba(85, 74, 35, .1);
+  box-shadow: inset 0 -2px 0 2px rgba(85, 74, 35, 0.1);
 }
 .pancake {
   width: 200px;
   height: 14px;
   background: #d8cb9f;
   border-radius: 1rem;
-  box-shadow: inset 0 -2px 0 3px rgba(85, 74, 35, .1);
+  box-shadow: inset 0 -2px 0 3px rgba(85, 74, 35, 0.1);
   margin: auto;
 }
 .falling-element {
@@ -97,39 +96,43 @@ body {
   animation-delay: 1.94s;
 }
 @keyframes element-drop {
-  0%, 100% {
+  0%,
+  100% {
     transform: translateY(-100vh) scaleY(0.7);
     opacity: 1;
- }
+  }
   11% {
     transform: translateY(20%) scaleY(1.2);
- }
+  }
   13% {
     transform: translateY(-30%) scaleY(0.9);
- }
-  14%, 67% {
+  }
+  14%,
+  67% {
     transform: translateY(0%) scaleY(1);
     opacity: 1;
- }
+  }
   68% {
     opacity: 0;
     transition: none;
     transform: translateY(-100vh) scaleY(0.7);
- }
+  }
 }
 @keyframes slide-plate-in {
   0% {
     transform: translateX(100vw);
- }
-  15%, 100% {
+  }
+  15%,
+  100% {
     transform: translateX(0);
- }
+  }
 }
 @keyframes slide-plate-out {
   65% {
     transform: translateX(0);
- }
-  85%, 100% {
+  }
+  85%,
+  100% {
     transform: translateX(-100vw);
- }
+  }
 }

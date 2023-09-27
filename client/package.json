@@ -81,7 +81,7 @@
       "jsx-a11y/no-static-element-interactions": 0
     },
     "parserOptions": {
-      "project": [
+      "client": [
         "**/tsconfig.json"
       ]
     }
