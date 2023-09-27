@@ -12,6 +12,7 @@ function RecipeBot() {
   };
 
   const generateRecipe = async () => {
+    setIsLoading(true);
     try {
       const response = await axios.post(
         'https://api.openai.com/v1/chat/completions',
@@ -52,6 +53,24 @@ function RecipeBot() {
 
   return (
     <div>
+      {isLoading && (
+        <div className="loader">
+          {/* Здесь ваш код пайлоудера */}
+          <div className="tall-stack">
+            <div className="butter falling-element"></div>
+            <div className="pancake falling-element"></div>
+            <div className="pancake falling-element"></div>
+            <div className="pancake falling-element"></div>
+            <div className="pancake falling-element"></div>
+            <div className="pancake falling-element"></div>
+            <div className="pancake falling-element"></div>
+            <div className="plate">
+              <div className="plate-bottom"></div>
+              <div className="shadow"></div>
+            </div>
+          </div>
+        </div>
+      )}
       <h1>Генератор рецептов</h1>
       <p>Введите продукты, которые есть у вас:</p>
       <input
@@ -67,6 +86,39 @@ function RecipeBot() {
         </div>
       )}
     </div>
+    // pfgfc
+    // <div>
+    //   <div className="loader">
+    //     {/* Здесь ваш код пайлоудера */}
+    //     <div className="tall-stack">
+    //       <div className="butter falling-element"></div>
+    //       <div className="pancake falling-element"></div>
+    //       <div className="pancake falling-element"></div>
+    //       <div className="pancake falling-element"></div>
+    //       <div className="pancake falling-element"></div>
+    //       <div className="pancake falling-element"></div>
+    //       <div className="pancake falling-element"></div>
+    //       <div className="plate">
+    //         <div className="plate-bottom"></div>
+    //         <div className="shadow"></div>
+    //       </div>
+    //     </div>
+    //   </div>
+    //   <h1>Генератор рецептов</h1>
+    //   <p>Введите продукты, которые есть у вас:</p>
+    //   <input
+    //     type="text"
+    //     value={ingredients.join(' ')}
+    //     onChange={handleIngredientChange}
+    //   />
+    //   <button onClick={generateRecipe}>Сгенерировать рецепт</button>
+    //   {recipe && (
+    //     <div>
+    //       <h2>Рецепт:</h2>
+    //       <div dangerouslySetInnerHTML={{ __html: recipe }} />
+    //     </div>
+    //   )}
+    // </div>
   );
 }
 
