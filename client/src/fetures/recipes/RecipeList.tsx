@@ -1,12 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
+
 // import RecipeItem from './RecipeItem';
 import './styles/style.scss';
 // import { recipesSelect } from './recipesSlice';
 
-import { RootState, useAppDispatch } from '../../store';
+
 import RecipeItem from './RecipeItem';
+
+
+
+import './styles/style.scss';
+import { recipesSelect } from './recipesSlice';
+
+
+import { RootState, useAppDispatch } from '../../store';
+// import RecipeItem from './RecipeItem';
 import { clearSearchQuery, setSearchQuery } from './recipesSlice';
 
 export default function RecipeList(): JSX.Element {
