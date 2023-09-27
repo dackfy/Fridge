@@ -6,4 +6,24 @@ router.get('/', async (req, res) => {
   res.json(recipes);
 });
 
+router.post('/', async (req, res) => {
+  try {
+    const { title, img, ingridients, instruction } = req.body;
+    const newRecipe = await Recipe.create({
+      title,
+      img,
+      ingridients,
+      instruction,
+    });
+
+    await Favorite.create({
+      userId: userIdsess,
+      recipeId: newRecipe.id,
+    });
+
+    res.json(newRecipe);
+  } catch (error) {
+    res.json({ message: error.message });
+  }
+});
 module.exports = router;
