@@ -28,7 +28,7 @@ function NavBar(): JSX.Element {
               className={({ isActive }) => (isActive ? 'active_link' : '')}
               to="/"
             >
-              Меню
+              FridgeAI
             </NavLink>
           </li>
 

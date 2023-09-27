@@ -8,7 +8,6 @@ import usersSlice from './fetures/users/usersSlice';
 const store = configureStore({
   reducer: {
     auth: authSlice,
-    // products: productsSlice,
     users: usersSlice,
   },
 });
