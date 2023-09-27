@@ -8,7 +8,7 @@ import { recipesAdd } from '../recipes/recipesSlice';
 function RecipeBot(): JSX.Element {
   const dispatch = useAppDispatch();
   const [ingredients, setIngredients] = useState([]);
-  const [recipe, setRecipe] = useState('');
+  const [recipeSteps, setRecipeSteps] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [added, setAdded] = useState(false);
 
@@ -26,7 +26,6 @@ function RecipeBot(): JSX.Element {
           model: 'gpt-3.5-turbo',
           messages: [
             { role: 'system', content: 'You are a helpful recipe bot.' },
-
             {
               role: 'user',
               content:
@@ -38,15 +37,15 @@ function RecipeBot(): JSX.Element {
         {
           headers: {
             Authorization:
-              'Bearer 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',
+              'Bearer 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',
             'Content-Type': 'application/json',
           },
         }
       );
 
       const generatedRecipe = response.data.choices[0].message.content;
-      const formattedRecipe = generatedRecipe.replace(/\n/g, '<br />');
-      setRecipe(formattedRecipe);
+      const formattedRecipeSteps = generatedRecipe.split('\n');
+      setRecipeSteps(formattedRecipeSteps);
 
       // Очищаем инпут после успешного запроса
       setIngredients([]);
@@ -56,10 +55,10 @@ function RecipeBot(): JSX.Element {
       setIsLoading(false);
     }
   };
-  const finRecipe = recipe.split(' ');
-  const title = finRecipe[0];
-  const ingridients = finRecipe[1];
-  const instruction = finRecipe[2];
+
+  const title = recipeSteps[0];
+  const ingridients = recipeSteps[1];
+  const instruction = recipeSteps[2];
   const img =
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgUh6_W47TOzt3af8i_orr3hd-SuYk5HVsbQDT_OmwFhsttUeG85Ltk6bDytR1xfMxP0Y&usqp=CAU';
 
@@ -72,7 +71,6 @@ function RecipeBot(): JSX.Element {
     <div>
       {isLoading && (
         <div className="loader">
-          {/* Здесь ваш код пайлоудера */}
           <div className="tall-stack">
             <div className="butter falling-element"> </div>
             <div className="pancake falling-element"> </div>
@@ -103,16 +101,15 @@ function RecipeBot(): JSX.Element {
         >
           Сгенерировать рецепт
         </button>
-        {recipe && (
-          // <div>
-          //   <h2>Рецепт:</h2>
-          //   <div dangerouslySetInnerHTML={{ __html: recipe }} />
-          // </div>
+        {recipeSteps.length > 0 && (
           <div>
-            <div>{title}</div>
-            <img src={img} alt="rere" />
-            <div>{ingridients}</div>
-            <div>{instruction}</div>
+            <div><h3>{title}</h3></div>
+            <img src={img} alt="recipe" />
+            <div>
+              {recipeSteps.slice(2).map((step, index) => (
+                <p key={index}>{step}</p>
+              ))}
+            </div>
             {!added ? (
               <button type="button" onClick={handleAddToFavorite}>
                 В избранное
