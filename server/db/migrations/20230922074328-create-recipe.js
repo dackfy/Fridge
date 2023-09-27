@@ -27,7 +27,7 @@ module.exports = {
       },
       apiId: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       createdAt: {
         allowNull: false,
