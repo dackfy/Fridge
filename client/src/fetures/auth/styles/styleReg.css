@@ -6,6 +6,7 @@
   --white: #ffffff;
   --text: #323760;
   --info-side-background: #ad4ef5;
+  --orange: rgb(246, 141, 4);
 }
 
 body {
@@ -153,7 +154,7 @@ body {
 }
 
 .my-form__button {
-  background-color: var(--primary);
+  background-color: var(--orange);
   color: white;
   white-space: nowrap;
   border: none;
@@ -178,8 +179,9 @@ body {
 
 .my-form__actions {
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  /* flex-direction: row; */
+  justify-content: center;
+  align-items: center;
   color: var(--secondary);
   gap: 16px;
   margin-top: 8px;
