@@ -33,12 +33,8 @@ function App(): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
-
-        <Route path="/" element={<NavBar />}>
-          <Route path="/" element={<ReceptSlaid />} />
-
         <Route path="/" element={<Layout />}>
-
+          <Route path="/" element={<ReceptSlaid />} />
           <Route path="/sign-up" element={<RegistrationFormPage />} />
           <Route path="/add" element={<ChatBot />} />
           <Route path="/check-user" element={<AuthorizationFormPage />} />

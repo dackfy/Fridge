@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-
 import './styles/style.scss';
-
-import RecipeItem from './RecipeItem';
 
 import './styles/style.scss';
 
@@ -63,7 +60,6 @@ export default function RecipeList(): JSX.Element {
             placeholder="искать на сайте"
           />
         </div>
-  
       </div>
       {!poisk ? (
         <div>
