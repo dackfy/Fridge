@@ -37,7 +37,7 @@ function RecipeBot(): JSX.Element {
         {
           headers: {
             Authorization:
-              'Bearer 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',
+              'Bearer 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',
             'Content-Type': 'application/json',
           },
         }
@@ -64,6 +64,8 @@ function RecipeBot(): JSX.Element {
 
   const handleAddToFavorite = (): void => {
     dispatch(recipesAdd({ title, ingridients, instruction, img }));
+    console.log({ title, ingridients, instruction, img },'---------------');
+    
     setAdded(true);
   };
 

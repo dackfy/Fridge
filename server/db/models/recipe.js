@@ -28,10 +28,6 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.TEXT,
         allowNull: false,
       },
-      apiId: {
-        type: DataTypes.INTEGER,
-        allowNull: true,
-      },
     },
     {
       sequelize,

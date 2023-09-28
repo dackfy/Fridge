@@ -25,10 +25,6 @@ module.exports = {
         type: Sequelize.TEXT,
         allowNull: false,
       },
-      apiId: {
-        type: Sequelize.INTEGER,
-        allowNull: true,
-      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

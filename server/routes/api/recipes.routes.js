@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Recipe } = require('../../db/models');
+const { Recipe, Favorite } = require('../../db/models');
 
 router.get('/', async (req, res) => {
   const recipes = await Recipe.findAll();
@@ -8,6 +8,7 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
+    const userIdsess = req.session.user_id;
     const { title, img, ingridients, instruction } = req.body;
     const newRecipe = await Recipe.create({
       title,
