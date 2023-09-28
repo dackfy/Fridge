@@ -75,7 +75,7 @@ function AuthorizationFormPage(): JSX.Element {
                 src="assets/password.svg"
               />
             </div>
-            <input type="submit" className="my-form__button" value="Login" />
+            <input type="submit" className="my-form__button" value="Войти" />
             <div className="my-form__actions">
               {/* <div className="my-form__row">
                 <span>Did you forget your password?</span>
