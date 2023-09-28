@@ -20,6 +20,7 @@ import { recipesLoad } from './fetures/recipes/recipesSlice';
 import RecipePage from './fetures/recipes/RecipePage';
 import { favoritesLoad } from './fetures/favorites/favoriteSlice';
 import FavoritesPage from './fetures/favorites/FavoritesPage';
+import Layout from './fetures/layout/Layout';
 // import BasketPage from '../features/products/BasketPage';
 
 function App(): JSX.Element {
@@ -35,7 +36,7 @@ function App(): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<NavBar />}>
+        <Route path="/" element={<Layout />}>
           <Route path="/sign-up" element={<RegistrationFormPage />} />
           <Route path="/add" element={<ChatBot />} />
           <Route path="/check-user" element={<AuthorizationFormPage />} />

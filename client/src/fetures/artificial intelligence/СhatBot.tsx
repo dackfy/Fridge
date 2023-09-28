@@ -70,7 +70,7 @@ function RecipeBot(): JSX.Element {
   };
 
   return (
-    <div>
+    <div className="generateContainer">
       {isLoading && (
         <div className="loader">
           <div className="tall-stack">
@@ -88,7 +88,7 @@ function RecipeBot(): JSX.Element {
           </div>
         </div>
       )}
-      <div className="generateContainer">
+      <div className="generateInputContainer">
         <h1>Генератор рецептов</h1>
         <p>Введите продукты, которые есть у вас:</p>
         <input
@@ -103,6 +103,7 @@ function RecipeBot(): JSX.Element {
         >
           Сгенерировать рецепт
         </button>
+
         {recipeSteps.length > 0 && (
           <div>
             <div><h3>{title}</h3></div>
@@ -119,6 +120,7 @@ function RecipeBot(): JSX.Element {
             ) : (
               <button type="button">Добавлено</button>
             )}
+
           </div>
         )}
       </div>

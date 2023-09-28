@@ -1,14 +1,56 @@
 .generateContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 40px;
+}
+
+.generateInputContainer {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-left: 10px;
-  padding-right: 10px;
+  gap: 16px;
+  max-width: 600px;
+  min-width: 300px;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 48px;
+  height: fit-content;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 5px;
+  margin-bottom: 10px;
 }
 
-.generate-recipe-btn {
+.generateInputContainer p {
+  margin-top: 48px;
+  font-size: 16px;
+  color: black;
+}
+
+.generateInputContainer h1 {
+  font-size: 26px;
+  font-weight: 900;
+  color: black;
+}
+
+.generateInputContainer input {
+  color: var(--secondary);
+  font-size: 16px;
+  font-weight: 500;
+  max-width: 75%;
+  width: 100%;
+  border: 1px solid var(--secondary);
+  height: 50px;
+  letter-spacing: 0.03rem;
+  background-color: transparent;
+  outline: none;
+  transition: 0.25s;
+  border-radius: 8px;
+  text-indent: 20px;
+}
+
+.generateInputContainer .generate-recipe-btn {
   background-color: var(--orange);
   color: white;
   white-space: nowrap;
@@ -16,7 +58,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 16px;
+  margin-top: 10px;
   line-height: 50px;
   outline: none;
   font-size: 1.2rem;
@@ -24,25 +66,10 @@
   text-decoration: none;
   cursor: pointer;
   font-weight: 800;
-  height: 35px;
+  height: 50px;
   width: 200px;
   border-radius: 10px;
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
-}
-
-.my-form {
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  position: relative;
-  gap: 16px;
-  max-width: 460px;
-  min-width: 300px;
-  width: 100%;
-  padding: 48px 32px;
-  height: fit-content;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-  border-radius: 5px;
 }

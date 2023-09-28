@@ -183,7 +183,7 @@ function RegistrationFormPage(): JSX.Element {
             </label>
           </div>
           <button type="submit" className="my-form__button">
-            Войти
+            Зарегистрироваться
           </button>
           <div className="my-form__actions">
             <a href="/check-user" title="Create Account">
