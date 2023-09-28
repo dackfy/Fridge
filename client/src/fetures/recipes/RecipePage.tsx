@@ -1,5 +1,4 @@
 import React from 'react';
-// import { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { recipesSelect } from './recipesSlice';
@@ -23,7 +22,6 @@ export default function RecipePage(): JSX.Element {
       console.log(recipe.id);
     }
   };
-  // const [status, setStatus] = useState(false);
 
   return (
     <>

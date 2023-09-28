@@ -3,10 +3,7 @@ import React, { useEffect } from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-// import ProductsPage from '../features/products/ProductsPage';
 import NavBar from './fetures/navbar/NavBar';
-// import ProductPage from '../features/products/ProductPage';
-// import '../features/products/styles/style.scss';
 import Error from './fetures/404/404';
 import { useAppDispatch } from './store';
 import RegistrationFormPage from './fetures/auth/RegistrationFormPage';
@@ -21,7 +18,6 @@ import RecipePage from './fetures/recipes/RecipePage';
 import { favoritesLoad } from './fetures/favorites/favoriteSlice';
 import FavoritesPage from './fetures/favorites/FavoritesPage';
 import Layout from './fetures/layout/Layout';
-// import BasketPage from '../features/products/BasketPage';
 
 function App(): JSX.Element {
   const dispatch = useAppDispatch();

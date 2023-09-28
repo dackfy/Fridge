@@ -13,8 +13,6 @@ export const fetchFavoritesAdd = async (id: number): Promise<Favorite[]> => {
     body: JSON.stringify({ id }),
   });
   const data = await res.json();
-  console.log(data, '===================');
-
   return data;
 };
 
