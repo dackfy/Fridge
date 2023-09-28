@@ -83,7 +83,7 @@
     },
     "parserOptions": {
       "client": [
-        "**/tsconfig.json"
+        "/tsconfig.json"
       ]
     }
   },

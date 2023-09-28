@@ -12,6 +12,7 @@ import { useAppDispatch } from './store';
 import RegistrationFormPage from './fetures/auth/RegistrationFormPage';
 import AuthorizationFormPage from './fetures/auth/AuthorizationFormPage';
 import ChatBot from './fetures/artificial intelligence/СhatBot';
+import ReceptSlaid from './fetures/recipes/ReceptSlaid';
 
 import { authcheckUser } from './fetures/auth/authSlice';
 import { usersLoad } from './fetures/users/usersSlice';
@@ -36,6 +37,7 @@ function App(): JSX.Element {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<NavBar />}>
+          <Route path="/" element={<ReceptSlaid />} />
           <Route path="/sign-up" element={<RegistrationFormPage />} />
           <Route path="/add" element={<ChatBot />} />
           <Route path="/check-user" element={<AuthorizationFormPage />} />

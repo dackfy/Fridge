@@ -57,18 +57,7 @@ export default function RecipeList(): JSX.Element {
             placeholder="искать на сайте"
           />
         </div>
-        <div className="carusel">
-          <Carousel data-bs-theme="dark">
-            {recipesInCarousel.map((recipe) => (
-              <Carousel.Item key={recipe.id}>
-                <RecipeItem recipe={recipe} />
-                <Carousel.Caption>
-                  <h3>{recipe.title}</h3>
-                </Carousel.Caption>
-              </Carousel.Item>
-            ))}
-          </Carousel>
-        </div>
+  
       </div>
       {!poisk ? (
         <div>
