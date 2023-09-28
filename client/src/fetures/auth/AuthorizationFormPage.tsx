@@ -27,21 +27,6 @@ function AuthorizationFormPage(): JSX.Element {
             <p>Пожалуйста, введите свои данные!</p>
           </div>
           <form onSubmit={handleSubmit} className="my-form">
-            {/* <div className="socials-row">
-              <a href="#" title="Use Google">
-                <img src="assets/google.png" alt="Google" />
-                Log in with Google
-              </a>
-              <a href="#" title="Use Apple">
-                <img src="assets/apple.png" alt="Apple" />
-                Log in with Apple
-              </a>
-            </div>
-            <div className="divider">
-              <div className="divider-line"></div>
-              Or
-              <div className="divider-line"></div>
-            </div> */}
             <div className="text-field">
               <label htmlFor="email">Email:</label>
               <input
@@ -77,12 +62,6 @@ function AuthorizationFormPage(): JSX.Element {
             </div>
             <input type="submit" className="my-form__button" value="Войти" />
             <div className="my-form__actions">
-              {/* <div className="my-form__row">
-                <span>Did you forget your password?</span>
-                <a href="#" title="Reset Password">
-                  Reset Password
-                </a>
-              </div> */}
               <div className="my-form__signup">
                 <p>Нет аккаунта?</p>
                 <a href="/sign-up" title="Create Account">

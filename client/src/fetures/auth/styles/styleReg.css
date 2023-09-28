@@ -21,39 +21,6 @@ body {
   font-family: Mulish;
 }
 
-/* .socials-row {
-  display: flex;
-  gap: 16px;
-}
-
-.socials-row img {
-  width: 24px;
-  height: 24px;
-}
-
-.socials-row > a {
-  padding: 8px;
-  border-radius: 8px;
-  width: 100%;
-  min-height: 30px;
-  display: flex;
-  gap: 12px;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  white-space: nowrap;
-  font-size: 1rem;
-  color: var(--text);
-  padding: 8px;
-  border: 1px solid var(--primary-light);
-  font-weight: 700;
-}
-
-.socials-row > a:hover {
-  color: var(--primary);
-  border: 1px solid var(--primary);
-} */
-
 .divider {
   display: flex;
   flex-direction: row;
@@ -72,22 +39,16 @@ body {
 .form-wrapper {
   margin: 0 auto;
   position: relative;
-  /* display: flex;
-  justify-content: center; */
-  /* align-items: center; */
   display: grid;
-  /* grid-template-columns: 3fr 2fr; */
   max-width: 1200px;
 }
 
 .form-side {
-  /* padding: 186px 32px 48px 32px; */
   margin-top: 40px;
   margin-bottom: 40px;
   display: flex;
   justify-content: center;
   align-items: start;
-  /* background-color: white; */
 }
 
 .info-side {
@@ -179,7 +140,6 @@ body {
 
 .my-form__actions {
   display: flex;
-  /* flex-direction: row; */
   justify-content: center;
   align-items: center;
   color: var(--secondary);

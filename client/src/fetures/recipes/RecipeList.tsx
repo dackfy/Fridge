@@ -1,19 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-
-
 import './styles/style.scss';
-
-
 
 import RecipeItem from './RecipeItem';
 
-
-
-
 import './styles/style.scss';
-
 
 import { RootState, useAppDispatch } from '../../store';
 import { clearSearchQuery, setSearchQuery } from './recipesSlice';
@@ -50,7 +42,6 @@ export default function RecipeList(): JSX.Element {
       <div>
         <h1>Категории</h1>
         <div className="search1">
-          {/* <div className="search"> */}
           <input
             className="search"
             type="text"
