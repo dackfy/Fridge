@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../store';
+import { RootState, useAppDispatch } from '../../store';
 import FavoritesItem from './FavoritesItem';
+import { favoritesLoad } from './favoriteSlice';
 
 function FavoritesPage(): JSX.Element {
   const favorites = useSelector(
@@ -9,7 +10,11 @@ function FavoritesPage(): JSX.Element {
   );
 
   console.log(favorites);
+  const dispatch = useAppDispatch();
 
+  useEffect(() => {
+    dispatch(favoritesLoad());
+  }, []);
   return (
     <>
       {favorites.map((favorite) => (

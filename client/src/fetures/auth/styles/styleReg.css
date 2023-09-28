@@ -87,7 +87,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: start;
-  background-color: white;
+  /* background-color: white; */
 }
 
 .info-side {

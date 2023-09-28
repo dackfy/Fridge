@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { RecipeState } from './types/RecipesState';
 import * as api from './api';
-import { Recipe } from './types/Recipestypes';
+import { Recipe, RecipeWithOutId } from './types/Recipestypes';
 // eslint-disable-next-line import/no-cycle
 import { RootState } from '../../store';
 
@@ -11,11 +11,15 @@ const initialState: RecipeState = {
   error: undefined,
 
   searchQuery: '',
-
 };
 
 export const recipesLoad = createAsyncThunk('recipes/load', () =>
   api.fetchRecipes()
+);
+
+export const recipesAdd = createAsyncThunk(
+  'recipes/add',
+  (recipe: RecipeWithOutId) => api.fetchAddRecipe(recipe)
 );
 
 const recipesSlice = createSlice({
@@ -40,13 +44,20 @@ const recipesSlice = createSlice({
 
       .addCase(recipesLoad.rejected, (state, action) => {
         state.error = action.error.message;
+      })
+
+      .addCase(recipesAdd.fulfilled, (state, action) => {
+        state.recipes.push(action.payload);
+      })
+
+      .addCase(recipesAdd.rejected, (state, action) => {
+        state.error = action.error.message;
       });
   },
 });
 
 export const recipesSelect = (store: RootState): Recipe[] =>
   store.recipes.recipes;
-
 
 export const { setSearchQuery } = recipesSlice.actions;
 export const { clearState } = recipesSlice.actions;

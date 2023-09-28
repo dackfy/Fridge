@@ -2,17 +2,22 @@ import React, { useState } from 'react';
 import './styles/style.css';
 import axios from 'axios';
 import './loading.css';
+import { useAppDispatch } from '../../store';
+import { recipesAdd } from '../recipes/recipesSlice';
 
-function RecipeBot() {
+function RecipeBot(): JSX.Element {
+  const dispatch = useAppDispatch();
   const [ingredients, setIngredients] = useState([]);
-  const [recipe, setRecipe] = useState('');
+  const [recipeSteps, setRecipeSteps] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+  const [added, setAdded] = useState(false);
 
-  const handleIngredientChange = (e: any) => {
+  const handleIngredientChange = (e: any): void => {
     setIngredients(e.target.value.split(' '));
   };
 
-  const generateRecipe = async () => {
+  const generateRecipe = async (): Promise<void> => {
+    setAdded(false);
     setIsLoading(true);
     try {
       const response = await axios.post(
@@ -21,7 +26,6 @@ function RecipeBot() {
           model: 'gpt-3.5-turbo',
           messages: [
             { role: 'system', content: 'You are a helpful recipe bot.' },
-
             {
               role: 'user',
               content:
@@ -33,15 +37,15 @@ function RecipeBot() {
         {
           headers: {
             Authorization:
-              'Bearer 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',
+              'Bearer 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',
             'Content-Type': 'application/json',
           },
         }
       );
 
       const generatedRecipe = response.data.choices[0].message.content;
-      const formattedRecipe = generatedRecipe.replace(/\n/g, '<br />');
-      setRecipe(formattedRecipe);
+      const formattedRecipeSteps = generatedRecipe.split('\n');
+      setRecipeSteps(formattedRecipeSteps);
 
       // Очищаем инпут после успешного запроса
       setIngredients([]);
@@ -52,22 +56,34 @@ function RecipeBot() {
     }
   };
 
+  const title = recipeSteps[0];
+  const ingridients = recipeSteps[1];
+  const instruction = recipeSteps[2];
+  const img =
+    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgUh6_W47TOzt3af8i_orr3hd-SuYk5HVsbQDT_OmwFhsttUeG85Ltk6bDytR1xfMxP0Y&usqp=CAU';
+
+  const handleAddToFavorite = (): void => {
+    dispatch(recipesAdd({ title, ingridients, instruction, img }));
+    console.log({ title, ingridients, instruction, img },'---------------');
+    
+    setAdded(true);
+  };
+
   return (
     <div className="generateContainer">
       {isLoading && (
         <div className="loader">
-          {/* Здесь ваш код пайлоудера */}
           <div className="tall-stack">
-            <div className="butter falling-element"></div>
-            <div className="pancake falling-element"></div>
-            <div className="pancake falling-element"></div>
-            <div className="pancake falling-element"></div>
-            <div className="pancake falling-element"></div>
-            <div className="pancake falling-element"></div>
-            <div className="pancake falling-element"></div>
+            <div className="butter falling-element"> </div>
+            <div className="pancake falling-element"> </div>
+            <div className="pancake falling-element"> </div>
+            <div className="pancake falling-element"> </div>
+            <div className="pancake falling-element"> </div>
+            <div className="pancake falling-element"> </div>
+            <div className="pancake falling-element"> </div>
             <div className="plate">
-              <div className="plate-bottom"></div>
-              <div className="shadow"></div>
+              <div className="plate-bottom"> </div>
+              <div className="shadow"> </div>
             </div>
           </div>
         </div>
@@ -87,10 +103,24 @@ function RecipeBot() {
         >
           Сгенерировать рецепт
         </button>
-        {recipe && (
-          <div className="generatedRecipe">
-            <h2>Рецепт:</h2>
-            <div dangerouslySetInnerHTML={{ __html: recipe }} />
+
+        {recipeSteps.length > 0 && (
+          <div>
+            <div><h3>{title}</h3></div>
+            <img src={img} alt="recipe" />
+            <div>
+              {recipeSteps.slice(2).map((step, index) => (
+                <p key={index}>{step}</p>
+              ))}
+            </div>
+            {!added ? (
+              <button type="button" onClick={handleAddToFavorite}>
+                В избранное
+              </button>
+            ) : (
+              <button type="button">Добавлено</button>
+            )}
+
           </div>
         )}
       </div>
