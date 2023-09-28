@@ -25,19 +25,6 @@ function RegistrationFormPage(): JSX.Element {
           <div className="form-welcome-row">
             <h1>Регистрация &#x1F44F;</h1>
           </div>
-          {/* <div className="socials-row">
-            <a href="#" title="Use Google">
-              <img src="./assets/google.png" alt="Google" />
-              Use Google
-            </a>
-            <a href="#" title="Use Apple">
-              <img src="./assets/apple.png" alt="Apple" /> Use Apple
-            </a>
-          </div>
-          <div className="divider">
-            <div className="divider-line"></div> Or{' '}
-            <div className="divider-line"></div>
-          </div> */}
           <div className="text-field">
             <label htmlFor="email">
               Email:
@@ -183,7 +170,7 @@ function RegistrationFormPage(): JSX.Element {
             </label>
           </div>
           <button type="submit" className="my-form__button">
-            Войти
+            Зарегистрироваться
           </button>
           <div className="my-form__actions">
             <a href="/check-user" title="Create Account">

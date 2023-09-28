@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
+
+
 import './styles/style.scss';
-import './styles/slaid.css';
+
+import RecipeItem from './RecipeItem';
+
+import './styles/style.scss';
+
 import { RootState, useAppDispatch } from '../../store';
 import { clearSearchQuery, setSearchQuery } from './recipesSlice';
 

@@ -37,7 +37,7 @@ function RecipeBot(): JSX.Element {
         {
           headers: {
             Authorization:
-              'Bearer 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',
+              'Bearer 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',
             'Content-Type': 'application/json',
           },
         }
@@ -47,7 +47,6 @@ function RecipeBot(): JSX.Element {
       const formattedRecipeSteps = generatedRecipe.split('\n');
       setRecipeSteps(formattedRecipeSteps);
 
-      // Очищаем инпут после успешного запроса
       setIngredients([]);
     } catch (error) {
       console.error('Ошибка при запросе к API ChatGPT', error);
@@ -64,11 +63,13 @@ function RecipeBot(): JSX.Element {
 
   const handleAddToFavorite = (): void => {
     dispatch(recipesAdd({ title, ingridients, instruction, img }));
+    console.log({ title, ingridients, instruction, img },'---------------');
+    
     setAdded(true);
   };
 
   return (
-    <div>
+    <div className="generateContainer">
       {isLoading && (
         <div className="loader">
           <div className="tall-stack">
@@ -86,7 +87,7 @@ function RecipeBot(): JSX.Element {
           </div>
         </div>
       )}
-      <div className="generateContainer">
+      <div className="generateInputContainer">
         <h1>Генератор рецептов</h1>
         <p>Введите продукты, которые есть у вас:</p>
         <input
@@ -101,6 +102,7 @@ function RecipeBot(): JSX.Element {
         >
           Сгенерировать рецепт
         </button>
+
         {recipeSteps.length > 0 && (
           <div>
             <div><h3>{title}</h3></div>
@@ -117,6 +119,7 @@ function RecipeBot(): JSX.Element {
             ) : (
               <button type="button">Добавлено</button>
             )}
+
           </div>
         )}
       </div>
