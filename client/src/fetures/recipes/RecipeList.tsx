@@ -1,22 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-
-
-
 import './styles/style.scss';
-
-
-
-import RecipeItem from './RecipeItem';
-
-
-
-
-import './styles/style.scss';
-
-
+import './styles/slaid.css';
 import { RootState, useAppDispatch } from '../../store';
 import { clearSearchQuery, setSearchQuery } from './recipesSlice';
+
+import Carousel from 'react-bootstrap/Carousel';
+import RecipeItem from './RecipeItem'; // Замените на ваш компонент RecipeItem
+
+import 'bootstrap/dist/css/bootstrap.min.css'; // Импортируйте стили Bootstrap
 
 export default function RecipeList(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -26,9 +18,11 @@ export default function RecipeList(): JSX.Element {
   const searchQuery = useSelector(
     (store: RootState) => store.recipes.searchQuery
   );
+
   useEffect(() => {
     dispatch(clearSearchQuery());
   }, []);
+
   useEffect(() => {
     setInputServices(searchQuery);
   }, [searchQuery]);
@@ -41,16 +35,20 @@ export default function RecipeList(): JSX.Element {
     }
     dispatch(setSearchQuery(event.target.value));
   };
+
   const filteredAll = recipes.filter((recipe) =>
     recipe.title.toLocaleLowerCase().includes(searchQuery.toLowerCase())
   );
+
+  // Разделите массив рецептов на первые 5 и остальные
+  const recipesInCarousel = recipes.slice(0, 5);
+  const recipesInList = recipes.slice(5);
 
   return (
     <>
       <div>
         <h1>Категории</h1>
         <div className="search1">
-          {/* <div className="search"> */}
           <input
             className="search"
             type="text"
@@ -59,12 +57,27 @@ export default function RecipeList(): JSX.Element {
             placeholder="искать на сайте"
           />
         </div>
+        <div className="carusel">
+          <Carousel data-bs-theme="dark">
+            {recipesInCarousel.map((recipe) => (
+              <Carousel.Item key={recipe.id}>
+                <RecipeItem recipe={recipe} />
+                <Carousel.Caption>
+                  <h3>{recipe.title}</h3>
+                </Carousel.Caption>
+              </Carousel.Item>
+            ))}
+          </Carousel>
+        </div>
       </div>
       {!poisk ? (
-        <div className="recipes__container">
-          {recipes.map((recipe) => (
-            <RecipeItem recipe={recipe} key={recipe.id} />
-          ))}
+        <div>
+          <div className="recipes__container">
+            {recipesInList.map((recipe) => (
+              <RecipeItem recipe={recipe} key={recipe.id} />
+            ))}
+          </div>
+          ;
         </div>
       ) : (
         <div className="recipes__container">
