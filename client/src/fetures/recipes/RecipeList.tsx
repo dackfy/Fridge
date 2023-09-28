@@ -1,22 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-
-
-
-import './styles/style.scss';
-
-
-
 import RecipeItem from './RecipeItem';
-
-
-
-
-import './styles/style.scss';
-
-
 import { RootState, useAppDispatch } from '../../store';
 import { clearSearchQuery, setSearchQuery } from './recipesSlice';
+import './styles/style.scss';
 
 export default function RecipeList(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -47,16 +34,15 @@ export default function RecipeList(): JSX.Element {
 
   return (
     <>
-      <div>
-        <h1>Категории</h1>
+      <div className="searchingRecipes">
+        <h1>Поиск: </h1>
         <div className="search1">
-          {/* <div className="search"> */}
           <input
             className="search"
             type="text"
             onChange={handleSearch}
             value={inputServices}
-            placeholder="искать на сайте"
+            placeholder="Введите название"
           />
         </div>
       </div>

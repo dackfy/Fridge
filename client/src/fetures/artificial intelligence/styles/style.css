@@ -23,13 +23,13 @@
 }
 
 .generateInputContainer p {
-  margin-top: 48px;
+  margin-top: 20px;
   font-size: 16px;
   color: black;
 }
 
 .generateInputContainer h1 {
-  font-size: 26px;
+  font-size: 24px;
   font-weight: 900;
   color: black;
 }
@@ -39,7 +39,7 @@
   font-size: 16px;
   font-weight: 500;
   max-width: 75%;
-  width: 100%;
+  max-width: 100%;
   border: 1px solid var(--secondary);
   height: 50px;
   letter-spacing: 0.03rem;
@@ -61,7 +61,7 @@
   margin-top: 10px;
   line-height: 50px;
   outline: none;
-  font-size: 1.2rem;
+  font-size: 1rem;
   letter-spacing: 0.025em;
   text-decoration: none;
   cursor: pointer;
@@ -72,4 +72,38 @@
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
   transition: all 0.3s ease;
   -webkit-transition: all 0.3s ease;
+}
+
+/* Медиа-запрос для планшетов (ширина до 768px) */
+@media (max-width: 768px) {
+  .generateInputContainer {
+    padding: 10px;
+  }
+  .generateInputContainer h1 {
+    font-size: 20px;
+  }
+  .generateInputContainer .generate-recipe-btn {
+    font-size: 0.9rem;
+  }
+}
+
+/* Медиа-запрос для мобильных устройств (ширина до 480px) */
+@media (max-width: 480px) {
+  .generateInputContainer {
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .generateInputContainer h1 {
+    font-size: 18px;
+  }
+  .generateInputContainer input {
+    height: 40px; /* Уменьшил высоту инпута */
+    font-size: 14px;
+  }
+  .generateInputContainer .generate-recipe-btn {
+    font-size: 0.8rem;
+    line-height: 40px;
+    height: 40px;
+    width: 180px;
+  }
 }

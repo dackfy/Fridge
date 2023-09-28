@@ -64,8 +64,8 @@ function RecipeBot(): JSX.Element {
 
   const handleAddToFavorite = (): void => {
     dispatch(recipesAdd({ title, ingridients, instruction, img }));
-    console.log({ title, ingridients, instruction, img },'---------------');
-    
+    console.log({ title, ingridients, instruction, img }, '---------------');
+
     setAdded(true);
   };
 
@@ -106,7 +106,9 @@ function RecipeBot(): JSX.Element {
 
         {recipeSteps.length > 0 && (
           <div>
-            <div><h3>{title}</h3></div>
+            <div>
+              <h3>{title}</h3>
+            </div>
             <img src={img} alt="recipe" />
             <div>
               {recipeSteps.slice(2).map((step, index) => (
@@ -120,7 +122,6 @@ function RecipeBot(): JSX.Element {
             ) : (
               <button type="button">Добавлено</button>
             )}
-
           </div>
         )}
       </div>
