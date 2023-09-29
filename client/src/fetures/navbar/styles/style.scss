@@ -17,21 +17,56 @@
     margin: 0;
     justify-content: space-between;
   }
+
+  a {
+    text-decoration: none;
+    color: white;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    padding: 5px;
+    transition: all 0.4s ease-in-out;
+  }
+
+  a:hover {
+    color: rgb(246, 141, 4);
+  }
+
+  .active_link {
+    color: rgb(246, 141, 4);
+  }
+
+  /* Медиа-запрос для планшетов (ширина до 768px) */
+  @media (max-width: 768px) {
+    &__ul {
+      flex-direction: column; /* Изменить на вертикальное расположение элементов */
+    }
+
+    a {
+      margin: 5px 0; /* Увеличьте расстояние между элементами */
+    }
+
+    .burger-menu {
+      display: block; /* Отобразить бургер-меню */
+    }
+  }
 }
 
-a {
-  text-decoration: none;
+/* Дополнительные стили для бургер-меню */
+.burger-menu {
+  display: none; /* Скрыть бургер-меню по умолчанию */
+  cursor: pointer;
   color: white;
-  border: 2px solid transparent;
-  border-radius: 5px;
-  padding: 5px;
-  transition: all 0.4s ease-in-out;
+  font-size: 24px;
+  padding: 10px;
 }
 
-nav a:hover {
-  color: rgb(246, 141, 4);
-}
+/* Меню для мобильных устройств (в медиа-запросе) */
+@media (max-width: 768px) {
+  .nav__ul {
+    display: none; /* Скрыть основное меню */
+  }
 
-li a.active_link {
-  color: rgb(246, 141, 4);
+  .burger-menu {
+    display: block; /* Отобразить бургер-меню */
+  }
 }

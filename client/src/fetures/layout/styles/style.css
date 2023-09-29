@@ -1,0 +1,12 @@
+.footer {
+  margin-top: 420px;
+}
+
+/* .content {
+  min-height: 100px;
+} */
+@media (max-width: 768px) {
+  header {
+    height: 48px;
+  }
+}

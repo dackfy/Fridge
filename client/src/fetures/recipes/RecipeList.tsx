@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import './styles/style.scss';
+import RecipeItem from './RecipeItem';
+
 
 import './styles/style.scss';
-
 import { RootState, useAppDispatch } from '../../store';
 import { clearSearchQuery, setSearchQuery } from './recipesSlice';
+import './styles/style.scss';
 
 import Carousel from 'react-bootstrap/Carousel';
 import RecipeItem from './RecipeItem'; // Замените на ваш компонент RecipeItem
@@ -49,15 +50,15 @@ export default function RecipeList(): JSX.Element {
 
   return (
     <>
-      <div>
-        <h1>Категории</h1>
+      <div className="searchingRecipes">
+        <h1>Поиск: </h1>
         <div className="search1">
           <input
             className="search"
             type="text"
             onChange={handleSearch}
             value={inputServices}
-            placeholder="искать на сайте"
+            placeholder="Введите название"
           />
         </div>
       </div>
