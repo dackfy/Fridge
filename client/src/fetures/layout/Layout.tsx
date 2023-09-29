@@ -2,7 +2,6 @@ import React from 'react';
 import NavBar from '../navbar/NavBar';
 import { Outlet } from 'react-router-dom';
 import Footer from '../footer/Footer';
-
 import './styles/style.css';
 
 function Layout(): JSX.Element {
