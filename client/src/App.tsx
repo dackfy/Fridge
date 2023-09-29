@@ -3,15 +3,13 @@ import React, { useEffect } from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-// import ProductsPage from '../features/products/ProductsPage';
 import NavBar from './fetures/navbar/NavBar';
-// import ProductPage from '../features/products/ProductPage';
-// import '../features/products/styles/style.scss';
 import Error from './fetures/404/404';
 import { useAppDispatch } from './store';
 import RegistrationFormPage from './fetures/auth/RegistrationFormPage';
 import AuthorizationFormPage from './fetures/auth/AuthorizationFormPage';
 import ChatBot from './fetures/artificial intelligence/СhatBot';
+import ReceptSlaid from './fetures/recipes/ReceptSlaid';
 
 import { authcheckUser } from './fetures/auth/authSlice';
 import { usersLoad } from './fetures/users/usersSlice';
@@ -21,7 +19,6 @@ import RecipePage from './fetures/recipes/RecipePage';
 import { favoritesLoad } from './fetures/favorites/favoriteSlice';
 import FavoritesPage from './fetures/favorites/FavoritesPage';
 import Layout from './fetures/layout/Layout';
-// import BasketPage from '../features/products/BasketPage';
 
 function App(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -37,6 +34,7 @@ function App(): JSX.Element {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
+          <Route path="/" element={<ReceptSlaid />} />
           <Route path="/sign-up" element={<RegistrationFormPage />} />
           <Route path="/add" element={<ChatBot />} />
           <Route path="/check-user" element={<AuthorizationFormPage />} />

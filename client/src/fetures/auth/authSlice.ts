@@ -27,28 +27,24 @@ const authSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      // Sign Up
       .addCase(signUp.fulfilled, (state, action) => {
         state.authUser = action.payload;
       })
       .addCase(signUp.rejected, (state, action) => {
         state.error = action.error.message;
       })
-      // Check Auto
       .addCase(checkAuto.fulfilled, (state, action) => {
         state.authUser = action.payload;
       })
       .addCase(checkAuto.rejected, (state, action) => {
         state.error = action.error.message;
       })
-      // Auth check user
       .addCase(authcheckUser.fulfilled, (state, action) => {
         state.authUser = action.payload;
       })
       .addCase(authcheckUser.rejected, (state, action) => {
         state.error = action.error.message;
       })
-      // Log Out
       .addCase(logOut.fulfilled, (state) => {
         state.authUser = undefined;
       })

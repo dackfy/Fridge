@@ -37,7 +37,7 @@ function RecipeBot(): JSX.Element {
         {
           headers: {
             Authorization:
-              'Bearer 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',
+              'Bearer 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',
             'Content-Type': 'application/json',
           },
         }
@@ -47,7 +47,6 @@ function RecipeBot(): JSX.Element {
       const formattedRecipeSteps = generatedRecipe.split('\n');
       setRecipeSteps(formattedRecipeSteps);
 
-      // Очищаем инпут после успешного запроса
       setIngredients([]);
     } catch (error) {
       console.error('Ошибка при запросе к API ChatGPT', error);
