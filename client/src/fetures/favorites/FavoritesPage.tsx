@@ -25,8 +25,17 @@ function FavoritesPage(): JSX.Element {
           ))}
         </div>
       ) : (
-        <div className="hed">
-          <h1>Добавьте рецепт!</h1>
+        <div
+          className="hed"
+          style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+          }}
+        >
+          <div>
+            <h1>Здесь пока нет рецептов</h1>
+          </div>
         </div>
       )}
     </div>
