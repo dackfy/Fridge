@@ -9,7 +9,7 @@ export default function RecipeItem({
 }): JSX.Element {
   return (
     <>
-      <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow">
+      <div className="max-w-sm bg-white border border-gray-200 rounded-lg shadow recipeItem">
         <Link to={`/recipes/${recipe.id}`}>
           <a href="#">
             <img className="rounded-t-lg" src={recipe.img} alt="food's img" />
@@ -22,7 +22,7 @@ export default function RecipeItem({
             </a>
             <a
               href="#"
-              className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-black rounded-lg hover:bg-black focus:ring-4 focus:outline-none focus:ring-black dark:bg-orange-500 dark:hover:bg-black-700 dark:focus:ring-black-800"
+              className="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-black rounded-lg hover:bg-orange-500 focus:ring-4 focus:outline-none focus:ring-black dark:bg-orange-500 dark:hover:bg-orange-500 dark:focus:ring-black-800"
             >
               Подробнее
               <svg

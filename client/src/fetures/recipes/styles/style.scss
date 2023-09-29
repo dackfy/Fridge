@@ -9,6 +9,11 @@
   margin: 20px;
   display: flex;
   justify-content: center;
+  align-items: baseline;
+}
+
+.searchingRecipes h1 {
+  font-size: 16px;
 }
 
 .search1 {
@@ -20,6 +25,15 @@
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
+}
+
+.recipeItem {
+  height: 400px;
+  margin-bottom: 10px;
+}
+
+.recipeItem img {
+  max-height: 50%;
 }
 
 // RecipePage
@@ -83,14 +97,19 @@
   cursor: pointer;
 }
 
+.recipePageContainer .red-button {
+  background-color: #ff4500;
+  color: #fff;
+}
+
 .favorite-button:hover {
   background-color: #000;
 }
 
 .favorite-button:active,
 .favorite-button:focus {
-  background-color: #ff4500; /* Измените цвет фона при нажатии и фокусе */
-  color: #fff; /* Измените цвет текста при нажатии и фокусе */
+  background-color: #ff4500;
+  color: #fff;
 }
 
 /* Медиа-запрос для планшетов (ширина до 768px) */

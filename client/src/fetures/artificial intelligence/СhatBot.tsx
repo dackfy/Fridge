@@ -115,11 +115,17 @@ function RecipeBot(): JSX.Element {
               ))}
             </div>
             {!added ? (
-              <button type="button" onClick={handleAddToFavorite}>
+              <button
+                type="button"
+                onClick={handleAddToFavorite}
+                className="favorite-button"
+              >
                 В избранное
               </button>
             ) : (
-              <button type="button">Добавлено</button>
+              <button type="button" className="red-button">
+                Добавлено
+              </button>
             )}
           </div>
         )}
