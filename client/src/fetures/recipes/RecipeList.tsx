@@ -1,18 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
-import RecipeItem from './RecipeItem';
-
-
 import './styles/style.scss';
 import { RootState, useAppDispatch } from '../../store';
 import { clearSearchQuery, setSearchQuery } from './recipesSlice';
 import './styles/style.scss';
 
-import Carousel from 'react-bootstrap/Carousel';
-import RecipeItem from './RecipeItem'; // Замените на ваш компонент RecipeItem
+import RecipeItem from './RecipeItem';
 
-import 'bootstrap/dist/css/bootstrap.min.css'; // Импортируйте стили Bootstrap
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function RecipeList(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -44,7 +40,6 @@ export default function RecipeList(): JSX.Element {
     recipe.title.toLocaleLowerCase().includes(searchQuery.toLowerCase())
   );
 
-  // Разделите массив рецептов на первые 5 и остальные
   const recipesInCarousel = recipes.slice(0, 5);
   const recipesInList = recipes.slice(5);
 

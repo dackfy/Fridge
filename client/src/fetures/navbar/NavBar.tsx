@@ -56,9 +56,6 @@ function NavBar(): JSX.Element {
                     RecipeBot
                   </NavLink>
                 </li>
-
-                {/* <a href="/busket"> </a>
-                <li>Добро пожаловать, {authUser?.name}!</li> */}
                 <li>
                   <NavLink
                     className={({ isActive }) =>

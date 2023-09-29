@@ -3,7 +3,6 @@ import React, { useEffect } from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-import NavBar from './fetures/navbar/NavBar';
 import Error from './fetures/404/404';
 import { useAppDispatch } from './store';
 import RegistrationFormPage from './fetures/auth/RegistrationFormPage';
