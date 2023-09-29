@@ -1,4 +1,3 @@
-/* FavoritesItem */
 
 .recipePageContainer {
   display: flex;
@@ -53,13 +52,7 @@
 .delete-button:hover {
   background-color: #ff4500;
 }
-.favoriteEmpty{
-  margin-top: 500px;
-  margin-bottom: 200px;
-  padding: 50px;
-}
 
-/* Медиа-запрос для планшетов (ширина до 768px) */
 @media (max-width: 768px) {
   .recipe-card {
     padding: 10px;
@@ -69,18 +62,17 @@
   }
 }
 
-/* Медиа-запрос для мобильных устройств (ширина до 480px) */
 @media (max-width: 480px) {
   .recipe-card {
-    border-radius: 0; /* Убираем скругление углов */
-    box-shadow: none; /* Убираем тень */
+    border-radius: 0; 
+    box-shadow: none; 
     padding: 10px;
   }
   .recipe-title {
     font-size: 16px;
   }
   .recipe-image {
-    border-radius: 0; /* Убираем скругление углов */
+    border-radius: 0; 
   }
   .delete-button {
     padding: 5px 8px;
