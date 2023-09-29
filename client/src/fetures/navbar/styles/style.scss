@@ -18,30 +18,30 @@
     justify-content: space-between;
   }
 
-  a {
-    text-decoration: none;
-    color: white;
-    border: 2px solid transparent;
-    border-radius: 5px;
-    padding: 5px;
-    transition: all 0.4s ease-in-out;
-  }
-
-  
   @media (max-width: 768px) {
     &__ul {
-      flex-direction: column; /* Изменить на вертикальное расположение элементов */
+      flex-direction: column; 
     }
     
     a {
-      margin: 5px 0; /* Увеличьте расстояние между элементами */
+      margin: 5px 0;
     }
 
     .burger-menu {
-      display: block; /* Отобразить бургер-меню */
+      display: block; 
     }
   }
 }
+
+a {
+  text-decoration: none;
+  color: white;
+  border: 2px solid transparent;
+  border-radius: 5px;
+  padding: 5px;
+  transition: all 0.4s ease-in-out;
+}
+
 
 .nav a:hover {
   color: rgb(246, 141, 4);
@@ -49,24 +49,36 @@
 
 .nav .active_link {
   color: rgb(246, 141, 4);
+
+.burger-menu {
+  display: none; 
+  cursor: pointer;
+  color: white;
+  font-size: 24px;
+  padding: 10px;
+
 }
 
-/* Меню для мобильных устройств (в медиа-запросе) */
+
 @media (max-width: 768px) {
   .nav__ul {
-    display: none; /* Скрыть основное меню */
+    display: none; 
   }
 
   .burger-menu {
-    display: block; /* Отобразить бургер-меню */
+    display: block; 
   }
+
 }
 
-/* Дополнительные стили для бургер-меню */
+
 .burger-menu {
-  display: none; /* Скрыть бургер-меню по умолчанию */
+  display: none; 
   cursor: pointer;
   color: white;
   font-size: 24px;
   padding: 10px;
 }
+
+}
+

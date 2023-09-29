@@ -1,0 +1,29 @@
+.containerFail {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 140vh;
+
+}
+.homeBtn {
+    font-size: 2rem;
+    border-radius: 12px;
+    margin: 80px;
+    background-color: black;
+    width: 350px;
+    color: white;
+    height: 70px;
+}
+.homeBtn:hover {
+    background-color: rgb(246, 141, 4);
+    transition-duration: 0.4s;
+  }
+.header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: -140px;
+}
