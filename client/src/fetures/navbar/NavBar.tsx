@@ -27,9 +27,11 @@ function NavBar(): JSX.Element {
       <header role="banner">
         <nav className="nav__container">
           <ul className={`nav__ul ${mobileMenuOpen ? 'mobile-open' : ''}`}>
-            <li>
+            <li className="nav_item">
               <NavLink
-                className={({ isActive }) => (isActive ? 'active_link' : '')}
+                className={({ isActive }) =>
+                  isActive ? 'active_link' : 'nav_item'
+                }
                 to="/"
               >
                 FridgeAI
