@@ -2,15 +2,23 @@
 import React, { useEffect } from 'react';
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import NavBar from '../src/fetures/navbar/NavBar';
-import Error from '../src/fetures/404/404';
-import { useAppDispatch } from '../../client/src/store';
-import * as api from './api';
-import RegistrationFormPage from '../src/fetures/auth/RegistrationFormPage';
-import AuthorizationFormPage from '../src/fetures/auth/AuthorizationFormPage';
 
-import { authcheckUser } from '../src/fetures/auth/authSlice';
-import { usersLoad } from '../src/fetures/users/usersSlice';
+
+import Error from './fetures/404/404';
+import { useAppDispatch } from './store';
+import RegistrationFormPage from './fetures/auth/RegistrationFormPage';
+import AuthorizationFormPage from './fetures/auth/AuthorizationFormPage';
+import ChatBot from './fetures/artificial intelligence/СhatBot';
+import ReceptSlaid from './fetures/recipes/ReceptSlaid';
+
+import { authcheckUser } from './fetures/auth/authSlice';
+import { usersLoad } from './fetures/users/usersSlice';
+import RecipeList from './fetures/recipes/RecipeList';
+import { recipesLoad } from './fetures/recipes/recipesSlice';
+import RecipePage from './fetures/recipes/RecipePage';
+import { favoritesLoad } from './fetures/favorites/favoriteSlice';
+import FavoritesPage from './fetures/favorites/FavoritesPage';
+import Layout from './fetures/layout/Layout';
 
 function App(): JSX.Element {
   const dispatch = useAppDispatch();
@@ -18,15 +26,22 @@ function App(): JSX.Element {
   useEffect(() => {
     dispatch(usersLoad());
     dispatch(authcheckUser());
+    dispatch(recipesLoad());
+    dispatch(favoritesLoad());
   }, []);
 
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<NavBar />}>
+        <Route path="/" element={<Layout />}>
+          <Route path="/" element={<ReceptSlaid />} />
           <Route path="/sign-up" element={<RegistrationFormPage />} />
+          <Route path="/add" element={<ChatBot />} />
           <Route path="/check-user" element={<AuthorizationFormPage />} />
+          <Route path="/recipes/:id" element={<RecipePage />} />
           <Route path="*" element={<Error />} />
+          <Route path="/recipes" element={<RecipeList />} />
+          <Route path="/favorites" element={<FavoritesPage />} />
         </Route>
       </Routes>
     </BrowserRouter>

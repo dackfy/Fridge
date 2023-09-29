@@ -4,11 +4,9 @@ const { Model } = require('sequelize');
 
 module.exports = (sequelize, DataTypes) => {
   class Recipe extends Model {
-    static associate({ User }) {
-      this.belongsToMany(User, {
-        through: 'Favorites',
+    static associate({ Favorite }) {
+      this.hasMany(Favorite, {
         foreignKey: 'recipeId',
-        otherKey: 'userId',
       });
     }
   }
@@ -28,10 +26,6 @@ module.exports = (sequelize, DataTypes) => {
       },
       instruction: {
         type: DataTypes.TEXT,
-        allowNull: false,
-      },
-      apiId: {
-        type: DataTypes.INTEGER,
         allowNull: false,
       },
     },

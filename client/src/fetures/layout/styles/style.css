@@ -1,0 +1,15 @@
+.content {
+  flex-grow: 1;
+}
+
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+@media (max-width: 768px) {
+  header {
+    height: 48px;
+  }
+}

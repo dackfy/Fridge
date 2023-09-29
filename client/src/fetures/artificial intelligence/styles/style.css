@@ -1,0 +1,128 @@
+.generateContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.generateInputContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  max-width: 600px;
+  min-width: 300px;
+  width: 100%;
+  padding-top: 20px;
+  padding-bottom: 48px;
+  height: fit-content;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.generateInputContainer p {
+  margin-top: 20px;
+  font-size: 16px;
+  color: black;
+}
+
+.generateInputContainer h1 {
+  font-size: 24px;
+  font-weight: 900;
+  color: black;
+}
+
+.generateInputContainer input {
+  color: var(--secondary);
+  font-size: 16px;
+  font-weight: 500;
+  max-width: 75%;
+  max-width: 100%;
+  border: 1px solid var(--secondary);
+  height: 50px;
+  letter-spacing: 0.03rem;
+  background-color: transparent;
+  outline: none;
+  transition: 0.25s;
+  border-radius: 8px;
+  text-indent: 20px;
+}
+
+.generateInputContainer .generate-recipe-btn {
+  background-color: var(--orange);
+  color: white;
+  white-space: nowrap;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+  line-height: 50px;
+  outline: none;
+  font-size: 1rem;
+  letter-spacing: 0.025em;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: 800;
+  height: 50px;
+  width: 200px;
+  border-radius: 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+}
+
+.favorite-button {
+  background-color: var(--orange);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.favorite-button:hover {
+  background-color: #000;
+}
+
+.red-button {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Медиа-запрос для планшетов (ширина до 768px) */
+@media (max-width: 768px) {
+  .generateInputContainer {
+    padding: 10px;
+  }
+  .generateInputContainer h1 {
+    font-size: 20px;
+  }
+  .generateInputContainer .generate-recipe-btn {
+    font-size: 0.9rem;
+  }
+}
+
+/* Медиа-запрос для мобильных устройств (ширина до 480px) */
+@media (max-width: 480px) {
+  .generateInputContainer {
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .generateInputContainer h1 {
+    font-size: 18px;
+  }
+  .generateInputContainer input {
+    height: 40px; /* Уменьшил высоту инпута */
+    font-size: 14px;
+  }
+  .generateInputContainer .generate-recipe-btn {
+    font-size: 0.8rem;
+    line-height: 40px;
+    height: 40px;
+    width: 180px;
+  }
+}
