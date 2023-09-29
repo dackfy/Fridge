@@ -10,13 +10,27 @@ function FavoritesItem({ recipe }: { recipe: Recipe }): JSX.Element {
   };
   return (
     <>
-      <div>{recipe.title}</div>
-      <div>{recipe.instruction}</div>
-      <img src={recipe.img} alt="" />
-      <button type="button" onClick={delFavoriteFanc}>
-        {' '}
-        delete{' '}
-      </button>
+      <div className="recipePageContainer">
+        <div className="recipe-card">
+          <img className="recipe-image" src={recipe?.img} alt="imgCard" />
+          <div className="recipeText">
+            <h2 className="recipe-title">{recipe?.title}</h2>
+            <p className="recipe-ingredients">
+              Ингридиенты: {recipe?.ingridients}
+            </p>
+            <p className="recipe-instructions">
+              Инструкция: {recipe?.instruction}
+            </p>
+            <button
+              type="button"
+              onClick={delFavoriteFanc}
+              className="delete-button"
+            >
+              Удалить
+            </button>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

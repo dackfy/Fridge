@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './styles/style.scss';
 import { NavLink, Outlet, useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
@@ -9,6 +9,7 @@ function NavBar(): JSX.Element {
   const authUser = useSelector((store: RootState) => store.auth.authUser);
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const handleLogOut = async (): Promise<void> => {
     const data = await fetchLogOut();
@@ -17,11 +18,15 @@ function NavBar(): JSX.Element {
       navigate('/');
     }
   };
+
+  const toggleMobileMenu = () => {
+    setMobileMenuOpen(!mobileMenuOpen);
+  };
   return (
     <>
       <header role="banner">
         <nav className="nav__container">
-          <ul className="nav__ul">
+          <ul className={`nav__ul ${mobileMenuOpen ? 'mobile-open' : ''}`}>
             <li>
               <NavLink
                 className={({ isActive }) => (isActive ? 'active_link' : '')}
@@ -33,24 +38,22 @@ function NavBar(): JSX.Element {
             <li>
               <NavLink
                 className={({ isActive }) => (isActive ? 'active_link' : '')}
-                to="/add"
+                to="/recipes"
               >
-                ChatBot
+                Рецепты
               </NavLink>
             </li>
 
             {authUser ? (
               <>
-                <a href="/busket"> </a>
-                <li>Добро пожаловать, {authUser?.name}!</li>
                 <li>
                   <NavLink
                     className={({ isActive }) =>
                       isActive ? 'active_link' : ''
                     }
-                    to="/recipes"
+                    to="/add"
                   >
-                    Рецепты
+                    RecipeBot
                   </NavLink>
                 </li>
                 <li>
@@ -60,7 +63,7 @@ function NavBar(): JSX.Element {
                     }
                     to="/favorites"
                   >
-                    Избранное
+                    Мои рецепты
                   </NavLink>
                 </li>
                 <li>
@@ -99,6 +102,9 @@ function NavBar(): JSX.Element {
               </>
             )}
           </ul>
+          <div className="burger-menu" onClick={toggleMobileMenu}>
+            ☰
+          </div>
         </nav>
       </header>
     </>
