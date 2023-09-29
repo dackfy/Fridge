@@ -5,9 +5,6 @@ import Footer from '../footer/Footer';
 
 import './styles/style.css';
 
-import ReceptSlaid from '../recipes/ReceptSlaid';
-
-
 function Layout(): JSX.Element {
   return (
     <div className="layout">

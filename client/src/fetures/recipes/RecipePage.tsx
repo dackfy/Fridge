@@ -15,11 +15,10 @@ export default function RecipePage(): JSX.Element {
   if (id) {
     recipe = recipes.find((el) => el.id === Number(id));
   }
-  console.log(recipe, '-----------------');
+
   const addtoFavorite = (): void => {
     if (recipe) {
       dispatch(favoritesAdd(recipe.id));
-      console.log(recipe.id);
     }
   };
 
@@ -30,8 +29,12 @@ export default function RecipePage(): JSX.Element {
           <img className="recipe-image" src={recipe?.img} alt="imgCard" />
           <div className="recipeText">
             <h2 className="recipe-title">{recipe?.title}</h2>
-            <p className="recipe-ingredients">Ингридиенты: {recipe?.ingridients}</p>
-            <p className="recipe-instructions">Инструкция: {recipe?.instruction}</p>
+            <p className="recipe-ingredients">
+              Ингридиенты: {recipe?.ingridients}
+            </p>
+            <p className="recipe-instructions">
+              Инструкция: {recipe?.instruction}
+            </p>
             <button
               type="button"
               onClick={addtoFavorite}

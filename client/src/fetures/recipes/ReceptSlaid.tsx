@@ -8,7 +8,6 @@ import './styles/slaid.css';
 export default function ReciptSlaid(): JSX.Element {
   const recipes = useSelector((store: RootState) => store.recipes.recipes);
 
-  // Получите первые 5 рецептов
   const firstFiveRecipes = recipes.slice(0, 5);
 
   return (

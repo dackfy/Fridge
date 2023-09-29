@@ -2,32 +2,57 @@ import React from 'react';
 
 function Error(): JSX.Element {
   const enlargedFourStyle = {
-    fontSize: '40rem', 
-    margin: '0 auto', 
+    fontSize: '40rem',
+    margin: '0 auto',
   };
 
   const customFontStyle = {
-    fontSize: '3rem', 
-    fontFamily: 'YourCustomFont', 
+    fontSize: '3rem',
+    fontFamily: 'YourCustomFont',
   };
 
   const redirectToRecipes = () => {
-    
     window.location.href = '/add';
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
-      <div style={customFontStyle}>
-        Такой страницы не существует
-      </div>
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100vh',
+      }}
+    >
+      <div style={customFontStyle}>Такой страницы не существует</div>
 
-      <button onClick={redirectToRecipes} style={{ fontSize: '2rem', marginTop: '1rem',borderRadius:'12px',color:'246, 141, 4' }}>
+      <button
+        onClick={redirectToRecipes}
+        style={{
+          fontSize: '2rem',
+          marginTop: '1rem',
+          borderRadius: '12px',
+          color: '246, 141, 4',
+        }}
+      >
         Перейти к рецептам
       </button>
 
-      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', marginTop: '1rem' }}>
-        <div style={{ animation: 'moveLeftRight 2s infinite', ...enlargedFourStyle }}>
+      <div
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          marginTop: '1rem',
+        }}
+      >
+        <div
+          style={{
+            animation: 'moveLeftRight 2s infinite',
+            ...enlargedFourStyle,
+          }}
+        >
           4
         </div>
 
@@ -37,7 +62,12 @@ function Error(): JSX.Element {
           alt="Ошибка"
         />
 
-        <div style={{ animation: 'moveLeftRight 2s infinite', ...enlargedFourStyle }}>
+        <div
+          style={{
+            animation: 'moveLeftRight 2s infinite',
+            ...enlargedFourStyle,
+          }}
+        >
           4
         </div>
       </div>
