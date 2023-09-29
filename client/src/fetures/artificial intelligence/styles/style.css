@@ -74,6 +74,25 @@
   -webkit-transition: all 0.3s ease;
 }
 
+.favorite-button {
+  background-color: var(--orange);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.favorite-button:hover {
+  background-color: #000;
+}
+
+.red-button {
+  background-color: #000;
+  color: #fff;
+}
+
 /* Медиа-запрос для планшетов (ширина до 768px) */
 @media (max-width: 768px) {
   .generateInputContainer {
